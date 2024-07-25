@@ -1,0 +1,44 @@
+{
+    "name": "starter-js-template",
+    "version": "1.0.0",
+    "description": "js/html/tailwindcss starting template",
+    "keywords": [
+        "javascript",
+        "tailwind",
+        "html",
+        "parcel",
+        "template",
+        "tailwindcss",
+        "frontend"
+    ],
+    "bin": "./bin/cli.js",
+    "browserslist": "> 0.5%, last 2 versions, not dead",
+    "scripts": {
+        "dev": "parcel src/index.html --dist-dir src/dist --open",
+        "build": "parcel build src/index.html --dist-dir src/dist"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/hpk992/starter-js-template.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/hpk992/starter-js-template/issues"
+    },
+    "homepage": "https://github.com/hpk992/starter-js-template#readme",
+    "dependencies": {
+        "jquery": "^3.6.3"
+    },
+    "devDependencies": {
+        "eslint": "^8.30.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-import": "^2.26.0",
+        "parcel": "^2.8.2",
+        "postcss": "^8.4.31",
+        "prettier": "^3.0.3",
+        "prettier-plugin-tailwindcss": "^0.5.6",
+        "tailwindcss": "^3.3.5"
+    }
+}
