@@ -4,6 +4,7 @@ import inquirer from 'inquirer';
 import * as fs from 'fs';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { execSync } from 'child_process';
 
 // template dir
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -38,6 +39,20 @@ inquirer.prompt(QUESTIONS).then((answers) => {
   fs.mkdirSync(`${CURR_DIR}/${projectName}`);
 
   createDirContent(templatePath, projectName);
+
+  console.log('Installing dependencies...');
+  const npmInstall = runCommand(`cd ${projectName} && npm i`);
+  if (!npmInstall) process.exit(1);
+
+  console.log('Setting up local git...');
+  const setupGit = runCommand(
+    `cd ${projectName} && git init && git add . && git commit -m 'initial d'`
+  );
+  if (!setupGit) process.exit(1);
+
+  console.log(`----------------------`);
+  console.log(`ALL DONE!! ୧༼ಠ益ಠ༽୨`);
+  console.log(`"cd ${projectName}" and "npm run dev" to get started!`);
 });
 
 // -r function for copy all content
@@ -53,6 +68,7 @@ function createDirContent(templatePath, newProjectPath) {
       const writePath = `${CURR_DIR}/${newProjectPath}/${file}`;
 
       fs.writeFileSync(writePath, content, 'utf8');
+      console.log(`creating ${writePath}`);
     } else if (fileType.isDirectory()) {
       fs.mkdirSync(`${CURR_DIR}/${newProjectPath}/${file}`);
 
@@ -61,3 +77,14 @@ function createDirContent(templatePath, newProjectPath) {
     }
   });
 }
+
+// run command in cli
+const runCommand = (command) => {
+  try {
+    execSync(`${command}`, { stdio: 'inherit' });
+  } catch (err) {
+    console.error(`Failed to execute ${command}`, err);
+    return false;
+  }
+  return true;
+};
