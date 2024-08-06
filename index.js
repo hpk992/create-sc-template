@@ -1,9 +1,13 @@
+#!/usr/bin/env node
+
 import inquirer from 'inquirer';
 import * as fs from 'fs';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
+// template dir
 const __dirname = dirname(fileURLToPath(import.meta.url));
+// curr dir
 const CURR_DIR = process.cwd();
 
 const CHOICES = fs.readdirSync(`${__dirname}/templates`);
@@ -36,6 +40,7 @@ inquirer.prompt(QUESTIONS).then((answers) => {
   createDirContent(templatePath, projectName);
 });
 
+// -r function for copy all content
 function createDirContent(templatePath, newProjectPath) {
   const filesToCreate = fs.readdirSync(templatePath);
 

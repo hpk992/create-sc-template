@@ -1,32 +1,13 @@
 {
     "name": "starter-js-template",
-    "version": "1.0.0",
-    "description": "js/html/tailwindcss starting template",
-    "keywords": [
-        "javascript",
-        "tailwind",
-        "html",
-        "parcel",
-        "template",
-        "tailwindcss",
-        "frontend"
-    ],
-    "bin": "./bin/cli.js",
+    "version": "0.1.0",
     "browserslist": "> 0.5%, last 2 versions, not dead",
     "scripts": {
         "dev": "parcel src/index.html --dist-dir src/dist --open",
         "build": "parcel build src/index.html --dist-dir src/dist"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/hpk992/starter-js-template.git"
-    },
     "author": "",
     "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/hpk992/starter-js-template/issues"
-    },
-    "homepage": "https://github.com/hpk992/starter-js-template#readme",
     "dependencies": {
         "jquery": "^3.6.3"
     },
