@@ -58,18 +58,20 @@ inquirer.prompt(QUESTIONS).then((answers) => {
 // -r function for copy all content
 function createDirContent(templatePath, newProjectPath) {
   const filesToCreate = fs.readdirSync(templatePath);
+  console.log(filesToCreate);
 
   filesToCreate.forEach((file) => {
     const origFilePath = `${templatePath}/${file}`;
     const fileType = fs.statSync(origFilePath);
-    console.log(file);
+    // console.log(file);
 
     if (fileType.isFile()) {
       const content = fs.readFileSync(origFilePath, 'utf8');
       // .gitignore issue
-      if (file === '.gitignore') console.log(`found ${file}`);
+      if (file === 'gitignore.temp') file = '.gitignore';
 
       const writePath = `${CURR_DIR}/${newProjectPath}/${file}`;
+      console.log(file);
 
       // fs.writeFileSync(writePath, content, 'utf8');
       // console.log(`creating ${writePath}`);
