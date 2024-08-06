@@ -71,8 +71,8 @@ function createDirContent(templatePath, newProjectPath) {
 
       const writePath = `${CURR_DIR}/${newProjectPath}/${file}`;
 
-      fs.writeFileSync(writePath, content, 'utf8');
-      console.log(`creating ${writePath}`);
+      // fs.writeFileSync(writePath, content, 'utf8');
+      // console.log(`creating ${writePath}`);
     } else if (fileType.isDirectory()) {
       fs.mkdirSync(`${CURR_DIR}/${newProjectPath}/${file}`);
 
