@@ -65,6 +65,9 @@ function createDirContent(templatePath, newProjectPath) {
 
     if (fileType.isFile()) {
       const content = fs.readFileSync(origFilePath, 'utf8');
+      // .gitignore issue
+      if (file === '.npmignore') file = '.gitignore';
+
       const writePath = `${CURR_DIR}/${newProjectPath}/${file}`;
 
       fs.writeFileSync(writePath, content, 'utf8');
