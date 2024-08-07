@@ -40,15 +40,15 @@ inquirer.prompt(QUESTIONS).then((answers) => {
 
   createDirContent(templatePath, projectName);
 
-  // console.log('Installing dependencies...');
-  // const npmInstall = runCommand(`cd ${projectName} && npm i`);
-  // if (!npmInstall) process.exit(1);
+  console.log('Installing dependencies...');
+  const npmInstall = runCommand(`cd ${projectName} && npm i`);
+  if (!npmInstall) process.exit(1);
 
-  // console.log('Setting up local git...');
-  // const setupGit = runCommand(
-  //   `cd ${projectName} && git init && git add . && git commit -m 'initial d'`
-  // );
-  // if (!setupGit) process.exit(1);
+  console.log('Setting up local git...');
+  const setupGit = runCommand(
+    `cd ${projectName} && git init && git add . && git commit -m 'initial d'`
+  );
+  if (!setupGit) process.exit(1);
 
   console.log(`----------------------`);
   console.log(`ALL DONE!! ୧༼ಠ益ಠ༽୨`);
