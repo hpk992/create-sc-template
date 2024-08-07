@@ -1,3 +1,10 @@
-Create frontend project template
+## Project Templates // startercode
 
-`npx create-sc-template@latest`
+```sh
+npx create-sc-template@latest
+```
+
+#### Templates:
+
+- JS frontend project
+- Next.js full-stack project
