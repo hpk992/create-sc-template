@@ -8,3 +8,4 @@ npx create-sc-template@latest
 
 - JS frontend project
 - Next.js full-stack project
+- Node.js server project
