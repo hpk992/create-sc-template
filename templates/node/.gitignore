@@ -1,0 +1,6 @@
+**/.DS_Store
+.parcel-cache
+node_modules
+config.env
+public/scss/style.css
+public/scss/style.css.map
